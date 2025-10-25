@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/mattropolis.css" id="theme" />
+    <link rel="stylesheet" href="css/monokai-theme.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# VIBE CODING
+## Como a IA transforma programadores em **CRIADORES**
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# A PROVOCAÇÃO: A Mudança de Papéis
+
+## O Programador de **ONTEM** 🆚 O Desenvolvedor de **HOJE**
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# O Programador de **Ontem** (Tradicional)
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->O foco estava em **dominar a sintaxe** e a **base** da linguagem.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->O profissional levava **tempo para provar seu valor**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->A máquina era vista estritamente como a **ferramenta** de execução.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> Nossos **alicerces** foram construídos na **paciência** e no **domínio manual**.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# O Desenvolvedor de **Hoje** (Habilitado por IA)
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->A prioridade é **conhecer a ferramenta** (IA, prompts) para potencializar a produtividade.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->A meta é ser **ágil** e um "**desbloqueador**" rápido de funcionalidades.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->A máquina evoluiu para ser o **parceiro de código** (co-piloto).
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> O **valor** reside em saber **orquestrar a tecnologia** para **acelerar** a **inovação**.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# ❓ Por Que Falar Disso?
+
+## A Resposta à Provocação
+
+A **Inteligência Artificial** criou um paradoxo:
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Ela **ACELERA** a produtividade como nunca antes.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Mas a *necessidade* de **Revisão** e **Garantia de Qualidade** expõe as **deficiências de base dos programadores, no próprio código**
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# E é aí onde mora o perigo...
+A **IA** não tira a sua vaga. A **falta de base** exposta pela **IA** sim.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+MAS, QUEM **SOU EU** PARA FALAR **SOBRE ISSO**?
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 🗣️ Quem é **John Sousa** na Fila do Pão?
+## *Angular Full Stack Engineer -* **MCGraw Hill**
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Atuo desde **2008** na área de desenvolvimento.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Hoje atuo principalmente com **revisão de código**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Meu foco hoje é a construção de **softwares educativos**, onde qualidade é **obrigação**.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <center>Esse é o tipo de coisa que eu vejo <br>**revisando código**...</center>
+
+```javascript
+function verificar(u, s) {
+    // 💀 Pura vulnerabilidade em 5 linhas!
+    if (u == true && s.length < 5) { 
+        eval(u); 
+        // Uso perigoso do eval()
+    }
+    return !(!u && s); 
+    /* Lógica de retorno confusa, 
+    cheia de negações duplas*/
+}
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <center>Esse sou eu vendo isso...</center>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <center>Voltando ao assunto...
+## O uso de **IA** cria um **paradoxo**...
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 😮 O Paradoxo do Copiar/Colar
+
+> "O código gerado por uma IA sempre parece lindo, mas a **logística de integração** é onde a base do programador é testada."
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# O código é como uma **peça** de **tetris**...
+<img src="Pasted image 20251025103502.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# O Vibe Coder
+É aquele que baseia seu desenvolvimento no **código funcional** gerado por uma **Inteligência Artificial** (IA) através de **prompts**.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# ⚠️ O que o Vibe Coder não vê:
+1. &shy;<!-- .element: class="fragment" data-fragment-index="1" --> **Falta de Contexto:** O código não sabe onde você vai colocá-lo (*escopo, estado*).
+1. &shy;<!-- .element: class="fragment" data-fragment-index="2" --> **Efeito Colateral:** O código *lindo* quebra outra parte do *sistema* ao ser colado.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 😩 ERRO DE VIBE 1: 
+## A Clássica Soma Inesperada
+
+```javascript
+/* Quando o Vibe Coder não checa 
+os tipos de dados...*/
+let preco = "10";  // Valor lido como string
+let quantidade = 5;  
+// ❌ PROMPT USADO: "Some preco e quantidade."
+let total = preco + quantidade;  
+console.log(total); 
+// Saída: "105"
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 😅 VIBE CHECK:
+> O cliente ligou para o financeiro: "Por que minha fatura deu 105 reais?"
+> A IA achou que era para dar as mãos, não somar!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 😩 ERRO DE VIBE 2: 
+## O Falso "Igual" (Segurança)
+
+```Javascript
+/* Ignora a diferença 
+entre '==' e '==='*/
+let userId = "0"; // String
+/* ❌ PROMPT USADO: "Checa se o ID 
+não tem valor, ou se é falso."*/
+if (userId == false) {  
+    /* Isso é TRUE em JavaScript! 
+       O '0' string é igual a 'false' 
+       na comparação fraca (==).
+    */    
+    console.log("Usuário deslogado 
+                 misteriosamente!");
+} else {
+    console.log("Usuário está logado (ufa!)");
+}
+
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 😅 VIBE CHECK:
+> O admin com ID '0' acabou de ser expulso do sistema! A IA não vai pagar esse prejuízo. Use SEMPRE **'==='**!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 🎭 O Vibe Coder: 
+## **ENZO**
+
+## O Imediatista Apenas **ENVOLVIDO**
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Acha que a **IA resolve tudo**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**ENVOLVIMENTO:** Foca no **Deploy** (Entrega Rápida).
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**A IA é substituta** do conhecimento.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Processo:** Prompt > Copiar > Colar > Commitar.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> **A Vibe do Enzo:** "Educação formal é perda de tempo. Eu faço em 3 horas o que a faculdade ensina em 3 anos."
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 👩‍💻 A Criadora: 
+## **VALENTINA** (Engenheira de Software)
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Fez **faculdade** e **complementa com cursos**. 
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**COMPROMETIMENTO:** Especializada em código de **qualidade** e **sustentabilidade**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->**Processo:** Planejar > Prompter > Revisar > Copiar > Colar > Testar > Se funcionar > Commitar.
+- &shy;<!-- .element: class="fragment" data-fragment-index="4" -->**Meta:** Foca no **Lifetime** (Manutenção Barata e longevidade).
+- &shy;<!-- .element: class="fragment" data-fragment-index="5" -->**Visão:** A IA é **aceleradora** de produtividade.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> **A Vibe da Valentina:** "A IA me torna mais rápida, mas a base me torna **insubstituível**."
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 🙋‍♂️ Quem é do Time **ENZO**?
+
+## Com Sinceridade, levantem as mãos quem...
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Acha que a **IA resolve 90%** do trabalho.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Pula a documentação e vai direto para o **prompt**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Só testa o código **depois** de commitar.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 👩‍💻 Quem é do Time **VALENTINA**?
+
+## Agora, levante a mão quem...
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Usa a IA, mas **revisa** o código linha por linha.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Acredita que a **base** é o seu maior diferencial.
+- &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Usa o prompt para **acelerar** o que já sabe fazer.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 🚀 A VIBE MUDOU?
+
+## Levante a mão quem...
+
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->Saiu do Time **Enzo** e migrou para o Time *Valentina*!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <center>Agora vou compartilhar com vocês um **segredo**...</center>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 🧠 O Segredo do Prompt: A Lógica por Trás
+
+## O CONTEXTO ARQUITETURAL MUDA O CÓDIGO INTEIRO.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 📝 Prompt FRACO (Enzo)
+```
+"Gere uma função JS que soma arrays."
+```
+## Resultado:
+```javascript
+function somaArraysMenosDefensiva(arr) { 
+	return arr.reduce((acc, curr) => acc + curr); 
+}
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+### 📝 Prompt FORTE (Valentina)
+
+```bash
+"Gere uma função TypeScript para Angular, 
+que use `Array.prototype.reduce`, trate 
+a possibilidade de itens null/undefined 
+e siga o padrão ESLint 'no-magic-numbers'."
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Resultado:
+```javascript
+const SUM_INITIAL_VALUE = 0;
+
+export function safeSumArray(items: Array<number | string | null | undefined>): number {
+  if (!Array.isArray(items)) {
+    return SUM_INITIAL_VALUE;
+  }
+
+  return items.reduce((accumulator: number, currentItem) => {
+    if (currentItem === null || currentItem === undefined) {
+      return accumulator;
+    }
+
+    const numericValue = typeof currentItem === 'string' 
+      ? parseFloat(currentItem) 
+      : (currentItem as number);
+
+    if (isNaN(numericValue)) {
+      return accumulator;
+    }
+
+    return accumulator + numericValue;
+    
+  }, SUM_INITIAL_VALUE);
+}
+```
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> **Moral:** A qualidade gerada pela **IA** é proporcional à **qualidade** da sua **base**.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 👑 A Regra de Ouro da Qualidade
+
+## A Ética da Criação
+
+> "Se você **copiou** um bloco de código da **IA** com mais de **10 linhas**, e não consegue explicar cada linha para um **júnior**, você ainda não está pronto para usá-lo."
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Ah mas eu sou **júnior**....
+<img src="Pessoal/Palestras/Inforday 2025/Pasted image 20251025104424.png" alt="" style="object-fit: scale-down">
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <center>**perfeito**, não confie no que diz alguém que copia um código de mais de **10 linhas** e não sabe te explicar!</center>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <span style="font-size: 15rem;">**combinado?**</span>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# ⬆️ O Salto do Vibe Coder
+
+## De **Envolvimento** a **Comprometimento**
+
+O Vibe Coder se torna um Criador quando deixa de fazer 3 coisas
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 1. Deixar de Ser **Apenas Envolvido**
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Vibe Coder:** Envolvido na **Entrega Rápida** (o "Deploy").
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Criador:** Comprometido com o **Lifetime** (Manutenção e Longevidade).
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 2. Deixar de Ser **Apenas Copiador**
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Vibe Coder:** Pede **código funcional**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Criador:** Pede **código contextual** (com arquitetura e padrões).
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 3. Deixar de Ser **Apenas Usuário**
+- &shy;<!-- .element: class="fragment" data-fragment-index="1" -->**Vibe Coder:** Vê a IA como **Substituta da Base**.
+- &shy;<!-- .element: class="fragment" data-fragment-index="2" -->**Criador:** Vê a IA como **Aceleradora da Própria Base**.
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# E agora, pra encerrarr...
+<span style="color: #555555;">(Vocês com vibe de tristeza: ahhhhhhhhhhhh.....)</span>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 🔥 Repitam Comigo, com a **VIBE CERTA**!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Minha **BASE** é Inegociável!
+**(A IA é o co-piloto, eu sou o(a) capitão(ã)!)**
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <center>Eu crio **SOLUÇÕES**, não apenas linhas de código!</center>
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Se a **tecnologia** transforma **vidas**...
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Nós somos a própria **VIBE** que transforma!
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# <center>Bora pra cima que o **Inforday** tá só começando!</center>
+👏
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# 👏👏👏👏👏👏👏👏
+</div></script></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Obrigado a todos! 
+## Vamos abrir para **perguntas**!
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":true,"transition":"slide","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>
