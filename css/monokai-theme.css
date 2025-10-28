@@ -1,5 +1,6 @@
 /* ========================================================== */
 /* TEMA LIMPO (FINAL: FUNDO EXTREMAMENTE ESCURO #121212) */
+
 /* ========================================================== */
 
 /* --- 0. PALETA MONOKAI CLÁSSICA --- */
@@ -17,6 +18,8 @@
   --r-background-color: #121212 !important;
   background-color: #121212 !important;
 
+  /* FONTE PADRÃO */
+
   /* Cor Principal do Texto (Quase branco) */
   --r-main-color: #F8F8F2 !important;
   color: #F8F8F2 !important;
@@ -29,7 +32,7 @@
   /* Cores de Código (Fundo sutilmente mais claro) */
   --r-code-background-color: #383838;
   --r-code-font-size: 0.8em;
-  
+
 }
 
 /* ---------------------------------------------------------- */
@@ -127,8 +130,8 @@
 }
 
 .reveal ul li::before {
-  /* Bullet Customizada: SINAL DE MAIOR QUE (>) CIANO */
-  content: ">";
+  /* Bullet Customizado: BARRAS DE COMENTÁRIO (//) CIANO */
+  content: "//";
   color: #66D9EF !important;
   /* Ciano/Azul */
   font-weight: bold;
@@ -226,18 +229,21 @@
 /* bearded-vibe.css */
 
 .reveal {
-    /* Define a fonte base para todo o texto (padrão é 28px) */
-    --r-main-font-size: 36px; 
-    
-    /* Outras customizações do seu tema já devem estar aqui: */
-    --r-background-color: #1E1E1E;
-    --r-main-color: #D4D4D4;
-    /* ... outras regras ... */
+  /* Define a fonte base para todo o texto (padrão é 28px) */
+  --r-main-font-size: 36px;
+
+  /* Outras customizações do seu tema já devem estar aqui: */
+  --r-background-color: #1E1E1E;
+  --r-main-color: #D4D4D4;
+  /* ... outras regras ... */
 }
 
 /* Opcional: Aumentar o tamanho do texto dentro das tabelas, se estiver pequeno */
-.reveal table, .reveal th, .reveal td {
-    font-size: 0.8em; /* Ajusta o tamanho da fonte das células e tabelas */
+.reveal table,
+.reveal th,
+.reveal td {
+  font-size: 0.8em;
+  /* Ajusta o tamanho da fonte das células e tabelas */
 }
 
 /* ---------------------------------------------------------- */
@@ -251,7 +257,7 @@
   color: #66D9EF !important;
   text-transform: uppercase !important;
   /* NOVO: Reduzido para ser grande, mas não dominante (ex: 1.7em) */
-  font-size: 2em !important; 
+  font-size: 2em !important;
 }
 
 /* H2: VERDE - Capitalize */
@@ -259,7 +265,7 @@
   color: #A6E22E !important;
   text-transform: capitalize !important;
   /* NOVO: Reduzido para ser claro (ex: 1.3em) */
-  font-size: 1.3em !important; 
+  font-size: 1.3em !important;
 }
 
 /* H3: ROXO - Capitalize */
@@ -267,7 +273,7 @@
   color: #AE81FF !important;
   text-transform: capitalize !important;
   /* NOVO: Próximo ao tamanho do corpo, para subtítulos (ex: 1.1em) */
-  font-size: 1.1em !important; 
+  font-size: 1.1em !important;
 }
 
 /* Negrito: LARANJA */
